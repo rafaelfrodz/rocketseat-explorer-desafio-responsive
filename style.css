@@ -123,6 +123,10 @@ main p {
   margin-bottom: 6rem;
 }
 
+.card-desktop {
+  display: none;
+}
+
 @keyframes downtop {
   0% {
     opacity: 0;
@@ -153,6 +157,10 @@ main p {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: "A B B";
+  }
+
+  main {
+    width: 100%;
   }
 
   main>p {
@@ -187,10 +195,24 @@ main p {
 
     grid-area: A;
 
-    margin: 3.2rem 5.1rem 12.5rem;
+    margin: 5.2rem 5.1rem 12.5rem;
   }
 
   main {
     grid-area: B;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 6.4rem 8.1rem 5rem 9.1rem;
+  }
+
+  .cards p {
+    display: none;
+  }
+
+  .card-desktop {
+    display: block;
   }
 }

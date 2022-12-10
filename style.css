@@ -69,6 +69,10 @@ main {
   margin: 0 auto;
 }
 
+footer {
+  display: none;
+}
+
 main p {
   margin: 3rem 0 6.3rem;
   font-family: var(--ff-heading-2);
@@ -82,7 +86,7 @@ main p {
   display: flex;
   flex-direction: column;
   gap: 3.6rem;
-
+  margin-bottom: 6rem;
   animation: downtop 700ms 350ms backwards;
 }
 
@@ -119,10 +123,6 @@ main p {
   animation: topdown 700ms 350ms backwards;
 }
 
-.card:last-child {
-  margin-bottom: 6rem;
-}
-
 .card-desktop {
   display: none;
 }
@@ -152,19 +152,25 @@ main p {
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 1410px) {
   .page {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: "A B B";
+    display: flex;
   }
 
   main {
-    width: 100%;
+    width: calc((100vw) - (38rem));
+    height: 100vh;
+    background-color: #ffffff;
   }
 
   main>p {
     display: none;
+  }
+
+  header {
+    max-width: 38rem;
+    height: 100vh;
+    grid-area: A;
   }
 
   header img {
@@ -193,19 +199,65 @@ main p {
 
     color: #FFFFFF;
 
-    grid-area: A;
+
 
     margin: 5.2rem 5.1rem 12.5rem;
   }
 
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff;
+  }
+
   main {
-    grid-area: B;
+    height: 90vh;
+  }
+
+  footer {
+    margin-bottom: 5rem;
+    display: block;
+    font-family: 'Open Sans';
+
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+
+    text-align: center;
+
+    color: #4A4E69;
+
+    mix-blend-mode: normal;
+  }
+
+  footer span {
+    font-family: 'Open Sans';
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+    /* identical to box height, or 200% */
+
+    text-align: center;
+
+    color: #4A4E69;
+
+    mix-blend-mode: normal;
   }
 
   .cards {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin: 6.4rem 8.1rem 5rem 9.1rem;
+    grid-template-areas:
+      "A B C"
+      "D B F"
+      "D E F";
+    gap: 3.2rem;
+    justify-content: center;
+
+    padding: 6.4rem 8rem;
+    margin: 0;
+
   }
 
   .cards p {
@@ -214,5 +266,35 @@ main p {
 
   .card-desktop {
     display: block;
+  }
+
+  .card img {
+    width: auto;
+  }
+
+  .cards div:nth-child(1) {
+    grid-area: A;
+  }
+
+  .cards div:nth-child(2) {
+    grid-area: B;
+  }
+
+  .cards div:nth-child(3) {
+    grid-area: C;
+
+  }
+
+  .cards div:nth-child(4) {
+    grid-area: D;
+  }
+
+  .cards div:nth-child(5) {
+    grid-area: E;
+  }
+
+  .cards div:nth-child(6) {
+    grid-area: F;
+
   }
 }
